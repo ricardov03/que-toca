@@ -1,0 +1,31 @@
+card:
+  title:
+    schedule: Horarios
+    free_traffic: Libre Tránsito
+    legal_frame: Marco Legal
+  m-f: Lunes a Viernes
+  s-s: Sábados y Domingos
+  last_decree: Último Decreto
+  expires: Expira
+  days: días
+messages:
+  warning: Se acerca el Toque de Queda.
+  active: Toque de Queda Activo.
+  ok: No hay problema.
+general:
+  en: En
+  last_update: Última Actualización
+  hour: Hora
+  hours: Horas
+button:
+  about: Acerca de
+  back: Atrás
+  go: Ir
+  home: Inicio
+  toggle_dark: Alternar modo oscuro
+  toggle_langs: Cambiar idioma a Inglés
+intro:
+  desc: |
+    ¿No tienes idea del horario del toque de queda? Yo tampoco,
+    así que me ayudé con esto. espero que también te ayude a ti.
+not-found: No se ha encontrado

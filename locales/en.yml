@@ -1,0 +1,31 @@
+card:
+  title:
+    schedule: Schedule
+    free_traffic: Free Traffic
+    legal_frame: Legal Framework
+  m-f: Monday to Friday
+  s-s: Saturdays and Sundays
+  last_decree: Last Decree
+  expires: Expires
+  days: days
+messages:
+  warning: The Curfew is approaching.
+  active: Curfew Active.
+  ok: No problem.
+general:
+  en: In
+  last_update: Last Update
+  hour: Hour
+  hours: Hours
+button:
+  about: About
+  back: Back
+  go: GO
+  home: Home
+  toggle_dark: Toggle dark mode
+  toggle_langs: Change language to Spanish
+intro:
+  desc: |
+    You have no idea of the curfew time? Neither do I,
+    so I helped myself with this. I hope it helps you too.
+not-found: Not found
