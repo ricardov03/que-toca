@@ -70,9 +70,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'Vitespa',
-        short_name: 'Vitespa',
-        theme_color: '#ffffff',
+        name: '¿Qué Toca?',
+        short_name: '¿Qué Toca?',
+        theme_color: '#3b82f6',
         icons: [
           {
             src: '/pwa-192x192.png',

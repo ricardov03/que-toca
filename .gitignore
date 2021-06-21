@@ -7,3 +7,6 @@ dist-ssr
 node_modules
 # intellij stuff
 .idea/
+
+# Local Netlify folder
+.netlify

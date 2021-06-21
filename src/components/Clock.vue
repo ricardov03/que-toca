@@ -55,18 +55,18 @@ export default {
           this.statusClass = 'green'
         if (hour >= this.weekends.start && hour <= (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours)))
           this.statusClass = 'yellow'
-        if ((hour >= (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours)) && hour <= this.weekends.end) || hour === 0)
+        if ((hour >= (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours))) || hour <= this.weekends.end)
           this.statusClass = 'red'
-        console.log(hour, this.weekends.start, this.statusClass, this.weekends.traffic_hours)
+        // console.log(hour, this.weekends.start, this.statusClass, this.weekends.traffic_hours, (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours)), this.weekends.end)
       }
       else {
         if (hour <= this.weekdays.start && hour >= this.weekdays.end)
           this.statusClass = 'green'
         if (hour >= this.weekdays.start && hour <= (parseInt(this.weekdays.start) + parseInt(this.weekdays.traffic_hours)))
           this.statusClass = 'yellow'
-        if ((hour >= parseInt((this.weekdays.start) + parseInt(this.weekdays.traffic_hours)) && hour <= this.weekdays.end) || hour === 0)
+        if ((hour >= (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours))) || hour <= this.weekends.end)
           this.statusClass = 'red'
-        // console.log(hour, this.weekends.start, this.statusClass, this.weekends.traffic_hours)
+        // console.log(hour, this.weekdays.start, this.statusClass, this.weekdays.traffic_hours)
       }
     },
     showTime() {
