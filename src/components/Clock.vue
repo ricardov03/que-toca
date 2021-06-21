@@ -57,7 +57,7 @@ export default {
           this.statusClass = 'yellow'
         if ((hour >= (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours)) && hour <= this.weekends.end) || hour === 0)
           this.statusClass = 'red'
-        // console.log(hour, this.weekends.start, this.statusClass, this.weekends.traffic_hours)
+        console.log(hour, this.weekends.start, this.statusClass, this.weekends.traffic_hours)
       }
       else {
         if (hour <= this.weekdays.start && hour >= this.weekdays.end)

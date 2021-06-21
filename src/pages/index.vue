@@ -56,6 +56,11 @@ export default {
             <em class="text-xs py-3 text-blue-600 dark:text-blue-200 block leading-tight opacity-75">{{ t('intro.desc') }}</em>
           </div>
         </div>
+        <div class="flex justify-center">
+          <div class="w-75">
+            <span class="text-xs font-bold py-1 text-red-600 dark:text-red-200 block leading-tight opacity-75">{{ t('intro.limit') }}</span>
+          </div>
+        </div>
 
         <clock :weekdays="decree.wd_24_hours" :weekends="decree.we_24_hours" class="text-center font-mono" />
 
