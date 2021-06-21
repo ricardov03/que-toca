@@ -153,7 +153,9 @@ export default {
       </div>
     </template>
     <template #fallback>
-      <div>Loading...</div>
+      <div class="text-red-600 dark:text-red-200">
+        Loading...
+      </div>
     </template>
   </Suspense>
 </template>

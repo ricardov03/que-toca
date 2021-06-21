@@ -1,0 +1,42 @@
+// <script setup lang="ts" >
+// import { ref, reactive, onMounted } from 'vue'
+// // import { useRouter } from 'vue-router'
+// import { useI18n } from 'vue-i18n'
+// import axios from 'axios'
+
+// // const router = useRouter()
+// const { t } = useI18n()
+
+// const { results } = async() => {
+//   const res = await axios.get(import.meta.env.VITE_API_URL)
+//   return await res.data
+// }
+// console.log(results)
+
+// onMounted(() => {
+//   const result = async() => {
+//     const res = await axios.get(import.meta.env.VITE_API_URL)
+//     const result = await res.data
+//     // console.log(result)
+//     return result
+//   }
+//   const { decree } = result()
+
+//   console.log(decree)
+// })
+// const decree = await fetch(import.meta.env.VITE_API_URL).then(a => a.json())
+
+// console.log
+// const data = ref([])
+// const loadingState = ref(null)
+
+// const fetchDecree = () => {
+//   loadingState.value = 'loading'
+//   return axios.get(import.meta.env.VITE_API_URL)
+//     .then((response) => {
+//       loadingState.value = 'success'
+//       data.value = response.data
+//     })
+// }
+
+// </script>
