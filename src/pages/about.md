@@ -1,5 +1,5 @@
 ---
-title: About
+title: Acerca de
 ---
 
 <div class="text-center">
@@ -12,6 +12,8 @@ title: About
     </div>
   </div>
 </div>
+
+¿No tienes idea del horario del toque de queda? Yo tampoco la tenía, así que me ayudé con esto. Espero que te sea de ayuda.
 
 <span class="text-blue-800 dark:text-blue-200 font-bold text-xl">¿Qué Toca?</span> es una aplicación que nace con la idea de ayudar a interpretar el complejo toque de queda que nos brindan las autoridades dominicanas debido a una clara falta de organización y logística. La idea detrás de la aplicación es brindar detalles del decreto actual vigente, indicando los horarios del toque de queda y su tiempo de libre tránsito.
 

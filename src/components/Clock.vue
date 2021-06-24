@@ -1,13 +1,13 @@
 <template>
   <div class="mt-4 mb-8">
-    <div id="MyClock" :class="`text-${statusClass}-800 dark:text-${statusClass}-200 `" class="text-2xl antialiased " v-text="time"></div>
+    <div id="MyClock" :class="`text-${statusClass}-800 dark:text-${statusClass}-200 `" class="text-3xl antialiased " v-text="time"></div>
     <div id="statusBar" class="flex justify-center flex-wrap content-center block">
       <div :class="`border-b border-b-3 border-${statusClass}-300 text-${statusClass}-900  dark:text-${statusClass}-200 border-${statusClass}-900 dark:border-${statusClass}-200`" class="text-xs" v-text="statusMessage"></div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   props: ['color', 'weekdays', 'weekends'],
   data() {
@@ -46,26 +46,35 @@ export default {
   },
   methods: {
     weekend(day) {
-      return day >= 0 || day <= 1
+      return day === 0 || day === 6
     },
     curfewTime() {
       const hour = new Date().getHours()
+
+      const wd_end = parseInt(this.weekdays.end)
+      const wd_start = parseInt(this.weekdays.start)
+      const wd_thours = parseInt(this.weekdays.traffic_hours)
+      const we_end = parseInt(this.weekends.end)
+      const we_start = parseInt(this.weekends.start)
+      const we_thours = parseInt(this.weekends.traffic_hours)
+
       if (this.weekend(new Date().getDay())) {
-        if (hour <= this.weekends.start && hour >= this.weekends.end)
-          this.statusClass = 'green'
-        if (hour >= this.weekends.start && hour <= (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours)))
-          this.statusClass = 'yellow'
-        if ((hour >= (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours))) || hour <= this.weekends.end)
-          this.statusClass = 'red'
+        if (hour <= we_start && hour >= we_end)
+          return this.statusClass = 'green'
+        if (hour >= we_start && hour <= (we_start + we_thours))
+          return this.statusClass = 'yellow'
+        if ((hour >= (we_start + we_thours)) || hour <= we_end)
+          return this.statusClass = 'red'
         // console.log(hour, this.weekends.start, this.statusClass, this.weekends.traffic_hours, (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours)), this.weekends.end)
       }
       else {
-        if (hour <= this.weekdays.start && hour >= this.weekdays.end)
-          this.statusClass = 'green'
-        if (hour >= this.weekdays.start && hour <= (parseInt(this.weekdays.start) + parseInt(this.weekdays.traffic_hours)))
-          this.statusClass = 'yellow'
-        if ((hour >= (parseInt(this.weekends.start) + parseInt(this.weekends.traffic_hours))) || hour <= this.weekends.end)
-          this.statusClass = 'red'
+        console.log(hour, wd_end, wd_start)
+        if (hour >= wd_end && hour <= wd_start)
+          return this.statusClass = 'green'
+        if (hour >= wd_start && hour <= (wd_start + wd_thours))
+          return this.statusClass = 'yellow'
+        if ((hour >= (wd_start + wd_thours)) || hour <= wd_end)
+          return this.statusClass = 'red'
         // console.log(hour, this.weekdays.start, this.statusClass, this.weekdays.traffic_hours)
       }
     },
