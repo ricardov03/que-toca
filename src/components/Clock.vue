@@ -79,18 +79,21 @@ export default {
       }
     },
     showTime() {
-      const date = new Date()
+      const timeZone = -4 // GTM -4:00
+
+      const d = new Date()
+      const utc = d.getTime() + (d.getTimezoneOffset() * 60000)
+      // getTime -> milliseconds since epoch (absolute time)
+      // getTimezoneOffset -> difference between local time vs utc, in minutes (relative time)
+      //    E.g.: d = "20210626T120000 GMT-4", UTC="20210626T160000 GMT+0", diff = UTC - d = 40000 secs, or 40000 / 60 mins => 666.67 minutes
+      const date = new Date(utc + (3600000 * timeZone)) // 1 hr in milliseconds = 3600000 ms
+
       let h = date.getHours() // 0 - 23
       let m = date.getMinutes() // 0 - 59
       let s = date.getSeconds() // 0 - 59
-      let session = 'AM'
 
-      if (h === 0) h = 12
-
-      if (h > 12) {
-        h = h - 12
-        session = 'PM'
-      }
+      const session = h >= 12 ? 'PM' : 'AM'
+      h = h > 12 ? h - 12 : h === 0 ? 12 : h
 
       h = (h < 10) ? `0${h}` : h
       m = (m < 10) ? `0${m}` : m
