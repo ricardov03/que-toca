@@ -30,7 +30,7 @@
             <router-link to="/about" :title="t('button.about')" class="mt-2 md:mt-0 md:mx-4 text-center hover:text-gray-800 dark:hover:text-gray-200">
               {{ t('button.about') }}
             </router-link>
-            <select id="" name="province">
+            <select id="" name="province" class="bg-transparent">
               <option value="santo_domingo">
                 Santo Domingo
               </option>
